@@ -1,10 +1,11 @@
 from database import db
+from datetime import datetime
 
 class User(db.Model):
     __tablename__ = "users" #iska matlab hai ki ye table ka naam "users" hoga database me
 
     user_id = db.Column(db.Integer, primary_key=True)#primary key me auto increment hota hai automatically, isliye humne auto increment ka use nahi kiya hai
-    name = db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String(100), nullable=False)#name of HR or student
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     role = db.Column(db.String(20), nullable=False) # company , student, admin
@@ -37,6 +38,8 @@ class Company(db.Model):
     industry = db.Column(db.String(100))
     description = db.Column(db.Text)
     website = db.Column(db.String(255))  
+    company_approved_status = db.Column(db.String(20), default="pending")#pending, approved, rejected
+    
     
     drives = db.relationship("Drive",backref="company",cascade="all, delete")
    
@@ -51,7 +54,9 @@ class Drive(db.Model):
     package = db.Column(db.String(50))
     location = db.Column(db.String(100))
     cgpa_criteria = db.Column(db.Float)
-    application_deadline = db.Column(db.Date)
+    application_deadline = db.Column(db.DateTime)
+    drive_approved_status = db.Column(db.String(20), default="pending")#pending, approved, rejected
+    
     
     applications = db.relationship("Application",backref="drive",cascade="all, delete")
     branches = db.relationship("DriveBranch",backref="drive",cascade="all, delete")
@@ -69,7 +74,7 @@ class Application(db.Model):
     application_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     student_id = db.Column(db.Integer,db.ForeignKey("students.student_id"),nullable=False)
     drive_id = db.Column(db.Integer,db.ForeignKey("drives.drive_id"),nullable=False)
-    applied_date = db.Column(db.Date)
+    applied_date = db.Column(db.DateTime, default=datetime.utcnow)
     status = db.Column(db.String(20), default="applied")
 
     __table_args__ = (db.UniqueConstraint('student_id', 'drive_id', name='unique_application'),)# ye constraint ensure karta hai ki ek student ek hi drive ke liye sirf ek baar apply kar sakta hai, agar koi student same drive ke liye multiple applications bhejne ki koshish karega to database error throw karega
