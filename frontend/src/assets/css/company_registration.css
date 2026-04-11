@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.company_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #2cb7a9, #e0eafc);
+}
+h2{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    color: #42ffec;
+    transform: scale(1.5)
+;
+}
+
+.registration_form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background:linear-gradient(to bottom ,rgb(0, 119, 255),rgb(135, 232, 235));
+    box-shadow: 0px 0px 40px rgba(75, 51, 195, 0.755);  
+    border: #007BFF solid 2px;
+}
+.registration_form label {
+    margin-top: 10px;
+}
+
+.registration_form input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button{
+    margin: 20px 10px;
+    padding: 10px ;
+    border-radius: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    box-shadow:  10px 10px 40px rgba(106, 227, 233, 0.755);
+    transition: all 0.3s ease;
+
+}
+
+label{
+    color: #fff;
+}
+
+/*transition*/
+button:hover{
+    background-color: #0056b3;
+    box-shadow: 10px 10px 40px rgba(0, 86, 179, 0.755);
+    transform: scale(1.05);
+}
+
+.password input{
+    width: 90%;
+    
+
+}
+

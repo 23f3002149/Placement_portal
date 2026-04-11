@@ -1,0 +1,120 @@
+.login-page {
+  text-align: center;
+  margin-top: 80px;
+ 
+}
+
+.subtitle {
+  color: gray;
+}
+
+
+.labels {
+  text-align: left;
+  display: block;
+  margin-top: 20px;
+}
+/* Card */
+.card {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 10px 10px 30px rgba(255, 145, 0, 0.482);
+  border: 2px solid rgba(255, 0, 0, 0.777);
+
+}
+
+/* Roles */
+.roles {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px ;
+  gap: 20px;
+}
+
+.role-card {
+  width: 30%;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+
+}
+
+/* Active */
+.role-card.active {
+  border: 2px solid blue;
+  background: #eef;
+}
+
+.icon{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Inputs */
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Button */
+button {
+  width: 100%;
+  margin: 20px 0;
+  padding: 12px;
+  background: linear-gradient(to right, blue, purple);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  
+}/*buttons pe color changing animation lagana hai*/
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, rgb(0, 255, 170),rgb(114, 230, 114));
+    color: seagreen;
+}
+.role-card:hover {
+    transform: scale(1.05);
+    border-color: blue;
+    
+}
+
+.register{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    /* background: linear-gradient(to right, rgb(114, 230, 114),rgb(0, 255, 170)); */
+    transition: all 0.3s ease;
+    color: white;
+    background:linear-gradient(to right, purple,blue);
+}
+.register:hover{
+    transform: scale(1.05);
+    background: linear-gradient(to right, rgb(0, 255, 170),rgb(114, 230, 114));
+    color: seagreen;
+}
+
+.error{
+    color: red;
+    margin-top: 10px;
+}
+.role_error{
+    color: red;
+    margin-top: 10px;
+}
+
+.password{
+    width: 85%;
+    margin-right: 0px;
+}
